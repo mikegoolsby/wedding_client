@@ -6,6 +6,7 @@ import Wedding from '../src/pages/wedding'
 import About from './pages/about';
 import Bparty from './pages/bparty';
 import RSVP from './pages/rsvp';
+import Hotel from './pages/hotel';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact from="/aboutus" render={props => <About/>}/>
         <Route exact from="/bridalparty" render={props => <Bparty/>}/>
         <Route exact from="/rsvp" render={props => <RSVP/>}/>
+        <Route exact from="/hotels" render={props => <Hotel {...props}/>}/>
       </Switch>
       <Nav/>
     </BrowserRouter>

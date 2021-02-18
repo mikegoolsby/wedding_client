@@ -11,6 +11,7 @@ const Bparty = () => {
         alignItems="center"
         >
             <h2>Bridal Party</h2>
+            <h3>Announcements coming soon!</h3>
         </Grid>
     )
 }

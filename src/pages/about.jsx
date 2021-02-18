@@ -10,7 +10,7 @@ const About = () => {
         justify="center"
         alignItems="center"
         >
-            <h2>About Us</h2>
+            <h1>About Us</h1>
         </Grid>
     )
 }

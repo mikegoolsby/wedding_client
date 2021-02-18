@@ -7,18 +7,22 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import HotelIcon from '@material-ui/icons/Hotel';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+import RedeemIcon from '@material-ui/icons/Redeem';
 
 const useStyles = makeStyles({
     root: {
         width: '100%',
-        overflow: 'hidden',
+        overflow: 'scroll',
         position: 'fixed',
         bottom: 0,
-        backgroundColor: '#eeeeee'
+        backgroundColor: '#eeeeee',
+        fontSize: '5px'
     },
     textStyle: {
-        padding: '2px',
-        width: '100%',
+        paddingLeft: '.5px',
+        paddingRight: '.5px',
+        width: '90%',
+        fontSize: '5px'
     }
 });
 
@@ -35,11 +39,11 @@ const Nav = () => {
       onChange={(event, newValue) => handleChange(event, newValue)}
       className={classes.root}
       >
-          <BottomNavigationAction className={classes.textStyle} label="The Wedding" component={Link} to="/"icon={<WcIcon />} />
+          <BottomNavigationAction className={classes.textStyle} label="Wedding" component={Link} to="/"icon={<WcIcon />} />
           <BottomNavigationAction className={classes.textStyle} label="About Us" component={Link} to="/aboutus" icon={<FavoriteIcon />} />
-          <BottomNavigationAction className={classes.textStyle} label="Bridal Party" component={Link} to="/bridalparty" icon={<EmojiPeopleIcon/>} />
           <BottomNavigationAction className={classes.textStyle} label="RSVP" component={Link} to="/rsvp" icon={<CheckBoxIcon />} />
-          <BottomNavigationAction className={classes.textStyle} label="Stay in NYC" icon={<HotelIcon/>} />
+          <BottomNavigationAction className={classes.textStyle} label="Stay in NYC" component={Link} to="/hotels" icon={<HotelIcon/>} />
+          <BottomNavigationAction className={classes.textStyle} label="Registry" component={Link} to="/hotels" icon={<RedeemIcon/>} />
       </BottomNavigation>
   )
 }
