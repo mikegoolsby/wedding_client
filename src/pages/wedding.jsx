@@ -4,12 +4,12 @@ import { Grid } from '@material-ui/core'
 
 const useStyles = makeStyles({
     root: {
-        fontSize: 16,
+        fontSize: '95%',
         textAlign: 'center',
-        fontFamily: [
-            'Dancing Script',
-            'cursive'
-        ].join(',')
+        // fontFamily: [
+        //     'Ballet',
+        //     'cursive'
+        // ].join(',')
     }
 })
 
@@ -24,7 +24,7 @@ const Wedding = () => {
       alignItems="center"
       className={classes.root}
       >
-          <h1>September the 17th, 2022</h1>
+          <h1>Welcome, Friends & Family</h1>
       </Grid>
 
 

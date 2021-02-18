@@ -1,5 +1,6 @@
 import React from 'react'
-import { BottomNavigation, BottomNavigationAction }from '@material-ui/core'
+import {Link} from 'react-router-dom'
+import { BottomNavigation, BottomNavigationAction}from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import WcIcon from '@material-ui/icons/Wc';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
@@ -12,11 +13,10 @@ const useStyles = makeStyles({
         width: '100%',
         overflow: 'hidden',
         position: 'fixed',
-        color: "#46385e",
         bottom: 0,
+        backgroundColor: '#eeeeee'
     },
     textStyle: {
-        color: "#46385e",
         padding: '2px',
         width: '100%',
     }
@@ -35,10 +35,10 @@ const Nav = () => {
       onChange={(event, newValue) => handleChange(event, newValue)}
       className={classes.root}
       >
-          <BottomNavigationAction className={classes.textStyle} label="The Wedding" icon={<WcIcon />} />
-          <BottomNavigationAction className={classes.textStyle} label="About Us" icon={<FavoriteIcon />} />
-          <BottomNavigationAction className={classes.textStyle} label="Bridal Party" icon={<EmojiPeopleIcon/>} />
-          <BottomNavigationAction className={classes.textStyle} label="RSVP" icon={<CheckBoxIcon />} />
+          <BottomNavigationAction className={classes.textStyle} label="The Wedding" component={Link} to="/"icon={<WcIcon />} />
+          <BottomNavigationAction className={classes.textStyle} label="About Us" component={Link} to="/aboutus" icon={<FavoriteIcon />} />
+          <BottomNavigationAction className={classes.textStyle} label="Bridal Party" component={Link} to="/bridalparty" icon={<EmojiPeopleIcon/>} />
+          <BottomNavigationAction className={classes.textStyle} label="RSVP" component={Link} to="/rsvp" icon={<CheckBoxIcon />} />
           <BottomNavigationAction className={classes.textStyle} label="Stay in NYC" icon={<HotelIcon/>} />
       </BottomNavigation>
   )

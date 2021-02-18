@@ -3,6 +3,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 import Nav from '../src/components/bottomNav'
 import Wedding from '../src/pages/wedding'
+import About from './pages/about';
+import Bparty from './pages/bparty';
+import RSVP from './pages/rsvp';
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact from="/" render={props => <Wedding {...props}/>} />
+        <Route exact from="/aboutus" render={props => <About/>}/>
+        <Route exact from="/bridalparty" render={props => <Bparty/>}/>
+        <Route exact from="/rsvp" render={props => <RSVP/>}/>
       </Switch>
       <Nav/>
     </BrowserRouter>
