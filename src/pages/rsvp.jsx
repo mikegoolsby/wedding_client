@@ -47,7 +47,7 @@ const RSVP = () => {
         justify="center"
         alignItems="center"
         >
-            <h1>RSVP will be available upon receipt of your formal invitation</h1>
+            <h1 className="title">Be our guest, be our guest!</h1>
             <form className={classes.root}>
                 <div>
                     <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} label="Your Name"/>
@@ -74,7 +74,7 @@ const RSVP = () => {
                 variant="contained"
                 color="primary"
                 className={classes.button}
-                // disabled
+                disabled
                 endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
                 onClick={() => { alert("Oops! Can't RSVP yet!") }}
             >
