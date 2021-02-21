@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Grid, MenuItem, TextField } from '@material-ui/core'
-import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { makeStyles} from '@material-ui/core/styles'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import {FormLabel, FormControlLabel, RadioGroup, FormGroup, Radio} from '@material-ui/core';
+import {FormLabel, FormControlLabel, RadioGroup, Radio} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,6 +21,35 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const url = "https://goolsby-wedding-api.herokuapp.com"
+
+function RSVP() {
+
+const getRsvp = () => {
+fetch(url + "/gear/")
+.then((response) => response.json())
+.then((data) => {
+    setRsvp(data)
+})
+}
+
+const handleCreate = (newRsvp) => {
+    fetch(url + "/rsvp/", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newRsvp),
+    }).then(response => {
+        getRsvp();
+    })
+}
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('submitted')
+}
+
 const foods = [
     {
         value: "Salmon",
@@ -35,21 +64,22 @@ const foods = [
         label: "Mushroom Ravioli, Chef's white cream sauce w/ herbs",
     }
 ]
-
-const RSVP = () => {
-    const classes = useStyles();
-    const [food, setFood] = React.useState('Salmon')
-    const [checked, setChecked] = React.useState(true);
-
-    const handleChange = (event) => {
-      setFood(event.target.value)
-    }
-
-    const handleChangeCheck = (event) => {
-      setChecked(event.target.checked)
-    }
   
-    return (
+const classes = useStyles();
+React.useEffect(() => getRsvp(), []);
+const [food, setFood] = React.useState('Salmon')
+const [checked, setChecked] = React.useState(true);
+const [rsvp, setRsvp] = React.useState([])
+    
+const handleChange = (event) => {
+    setFood(event.target.value)
+}
+
+const handleChangeCheck = (event) => {
+    setChecked(event.target.checked)
+}
+
+    return(
         <Grid
         container
         direction="column"
@@ -57,7 +87,7 @@ const RSVP = () => {
         alignItems="center"
         >
             <h1 className="title">Be our guest, be our guest!</h1>
-            <form className={classes.root} action={`https://goolsby-wedding-api.herokuapp.com/rsvp`} method="POST">
+            <form className={classes.root} onSubmit={handleCreate}>
                 <div>
                     <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} label="First Name" name="first_name"/>
                     <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} label="Last Name" name="last_name"/>
@@ -91,13 +121,15 @@ const RSVP = () => {
                 color="primary"
                 className={classes.button}
                 // disabled
+                type="submit"
                 endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
-                onClick={() => { alert("Oops! Can't RSVP yet!") }}
+                onClick={handleSubmit}
             >
                 RSVP
             </Button>
         </Grid>
     )
 }
+
 
 export default RSVP;
