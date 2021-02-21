@@ -6,12 +6,13 @@ import WcIcon from '@material-ui/icons/Wc';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import HotelIcon from '@material-ui/icons/Hotel';
-import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+// import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import RedeemIcon from '@material-ui/icons/Redeem';
 
 const useStyles = makeStyles({
     root: {
         width: '100%',
+        height: 60,
         overflow: 'scroll',
         position: 'fixed',
         bottom: 0,
@@ -43,7 +44,7 @@ const Nav = () => {
           <BottomNavigationAction className={classes.textStyle} label="About Us" component={Link} to="/aboutus" icon={<FavoriteIcon />} />
           <BottomNavigationAction className={classes.textStyle} label="RSVP" component={Link} to="/rsvp" icon={<CheckBoxIcon />} />
           <BottomNavigationAction className={classes.textStyle} label="Stay in NYC" component={Link} to="/hotels" icon={<HotelIcon/>} />
-          <BottomNavigationAction className={classes.textStyle} label="Registry" component={Link} to="/hotels" icon={<RedeemIcon/>} />
+          <BottomNavigationAction className={classes.textStyle} label="Registry" component={Link} to="/registry" icon={<RedeemIcon/>} />
       </BottomNavigation>
   )
 }
