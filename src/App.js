@@ -17,7 +17,7 @@ function App() {
         <Route exact from="/" render={props => <Wedding {...props}/>} />
         <Route exact from="/aboutus" render={props => <About/>}/>
         <Route exact from="/bridalparty" render={props => <Bparty/>}/>
-        <Route exact from="/rsvp" render={props => <RSVP/>}/>
+        <Route exact from="/rsvp" render={props => <RSVP {...props}/>}/>
         <Route exact from="/hotels" render={props => <Hotel {...props}/>}/>
         <Route exact from="/registry" render={props => <Registry {...props}/>}/>
       </Switch>

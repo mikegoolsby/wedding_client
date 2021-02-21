@@ -21,34 +21,19 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const url = "https://goolsby-wedding-api.herokuapp.com"
+const initialFValues = {
+    id: 0,
+    first_name: '',
+    last_name: '',
+    attending: null,
+    food: '',
+    song: ''
+}
+
+// const url = "https://goolsby-wedding-api.herokuapp.com"
 
 function RSVP() {
 
-const getRsvp = () => {
-fetch(url + "/gear/")
-.then((response) => response.json())
-.then((data) => {
-    setRsvp(data)
-})
-}
-
-const handleCreate = (newRsvp) => {
-    fetch(url + "/rsvp/", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newRsvp),
-    }).then(response => {
-        getRsvp();
-    })
-}
-
-const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('submitted')
-}
 
 const foods = [
     {
@@ -66,14 +51,21 @@ const foods = [
 ]
   
 const classes = useStyles();
-React.useEffect(() => getRsvp(), []);
 const [food, setFood] = React.useState('Salmon')
 const [checked, setChecked] = React.useState(true);
-const [rsvp, setRsvp] = React.useState([])
+const [values, setValues] = React.useState(initialFValues);
     
 const handleChange = (event) => {
     setFood(event.target.value)
 }
+
+// const handleInputChange = (e) => {
+//   const {first_name, value} = e.target
+//   setValues({
+//       ...values,
+//       [first_name]: value
+//   })
+// }
 
 const handleChangeCheck = (event) => {
     setChecked(event.target.checked)
@@ -87,16 +79,23 @@ const handleChangeCheck = (event) => {
         alignItems="center"
         >
             <h1 className="title">Be our guest, be our guest!</h1>
-            <form className={classes.root} onSubmit={handleCreate}>
-                <div>
-                    <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} label="First Name" name="first_name"/>
-                    <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} label="Last Name" name="last_name"/>
-                    <FormLabel component="legend" id="padme">Your Response</FormLabel>
-                    <RadioGroup>
-                        <FormControlLabel value="true" control={<Radio onChange={handleChangeCheck}
-                        />}label="Accepts with Pleasure"/>
-                        <FormControlLabel value="false" control={<Radio onChange={handleChangeCheck}/>} label="Declines Regretfully" />
-                    </RadioGroup>
+            <form className={classes.root}>
+            <Grid item xs={6}>
+                <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8}} label="First Name" name="first_name" />
+            </Grid>
+            <Grid item xs={6}>
+                <TextField required id="standard-required" size="normal" margin="normal" style={{ margin: 8}} label="Last Name" name="last_name"/>
+            </Grid>
+            <Grid container xs={12} direction="row" justify="center">
+                <FormLabel component="legend" id="padme">Your Response</FormLabel>
+            </Grid>
+            <Grid container xs={12} direction="row" justify="center">
+                <RadioGroup>
+                    <FormControlLabel value="true" control={<Radio onChange={handleChangeCheck}
+                    />}label="Accepts with Pleasure"/>
+                    <FormControlLabel value="false" control={<Radio onChange={handleChangeCheck}/>} label="Declines Regretfully" />
+                </RadioGroup>
+            </Grid>
                     {/* <TextField
                         id="standard-multiline-static"
                         label="Guest Name(s)"
@@ -114,7 +113,6 @@ const handleChangeCheck = (event) => {
                         ))}
                     </TextField>
                     <TextField id="standard-required" margin="normal" size="normal" style={{ margin: 8, width: '365px' }} label="Request a song" helperText="Enter an artist followed by a song title"/>
-                </div>
             </form>
             <Button
                 variant="contained"
@@ -123,7 +121,7 @@ const handleChangeCheck = (event) => {
                 // disabled
                 type="submit"
                 endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
-                onClick={handleSubmit}
+                // onClick={handleCreate}
             >
                 RSVP
             </Button>
