@@ -25,7 +25,7 @@ const Wedding = () => {
       className={classes.root}
       >
           <h1 className="title">Welcome, Friends & Family</h1>
-          <h5>If you've arrived here before getting a save the date or an invitation, this site is still under construction!</h5>
+          <h5>You'll see more here soon!</h5>
       </Grid>
 
 

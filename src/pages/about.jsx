@@ -20,6 +20,7 @@ const About = () => {
     const classes = useStyles();
   
     return (
+        <>
         <Grid
         container
         direction="column"
@@ -51,8 +52,8 @@ const About = () => {
                     </Button>
                 </CardActions>
             </Card>
-            <h3>bridal party information</h3>
         </Grid>
+        </>
     )
 }
 
