@@ -53,10 +53,11 @@ const foods = [
   
 const classes = useStyles();
 const [food, setFood] = React.useState('Salmon')
-const [checked, setChecked] = React.useState(true);
+const [checked, setChecked] = React.useState('');
     
 const handleChangeFood = (event) => {
     setFood(event.target.value)
+    setFormData({...formData, [event.target.name]: event.target.value})
 }
 
 const handleChangeRsvp = (event) => {
@@ -64,7 +65,7 @@ const handleChangeRsvp = (event) => {
 }
 
 const handleChangeCheck = (event) => {
-    setChecked(event.target.checked)
+    setFormData({...formData, [event.target.name]: event.target.value})
 }
 
     return(
@@ -86,15 +87,14 @@ const handleChangeCheck = (event) => {
                 <FormLabel component="legend" id="padme">Your Response</FormLabel>
             </Grid>
             <Grid container xs={12} direction="row" justify="center">
-                <RadioGroup>
-                    <FormControlLabel value="true" control={<Radio name="true" onChange={handleChangeCheck}
-                    />}label="Accepts with Pleasure" />
-                    <FormControlLabel value="false" control={<Radio name="false" onChange={handleChangeCheck}/>} label="Declines Regretfully"/>
+                <RadioGroup name="attending" value={formData.attending} onChange={handleChangeCheck}>
+                    <FormControlLabel value="true" control={<Radio/>}label="Accepts with Pleasure" />
+                    <FormControlLabel value="false" control={<Radio/>} label="Declines Regretfully" />
                 </RadioGroup>
             </Grid>
-                    <TextField required select id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} onChange={handleChangeFood} value={food} label="Select Dinner">
+                    <TextField required select id="standard-required" size="normal" margin="normal" style={{ margin: 8, width: '365px' }} onChange={handleChangeFood} name="food" value={food} label="Select Dinner">
                         {foods.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
+                            <MenuItem key={option.value} value={option.value} name={option.value}>
                                 {option.label}
                             </MenuItem>
                         ))}
@@ -106,7 +106,6 @@ const handleChangeCheck = (event) => {
                 variant="contained"
                 color="primary"
                 className={classes.button}
-                disabled
                 endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
                 onClick={handleSubmit}
             >
