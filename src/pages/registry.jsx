@@ -16,6 +16,7 @@ const Registry = () => {
             <Button
                 variant="contained"
                 color="primary"
+                disabled
                 startIcon={<ExitToAppIcon/>}
                 href="https://www.amazon.com/wedding/devan-fogle-michael-goolsby--september-2022/registry/3F5C8CZ66OFL5"
                 target="_blank"
