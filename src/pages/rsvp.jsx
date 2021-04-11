@@ -38,6 +38,10 @@ const RSVP = (props) => {
 
 const foods = [
     {
+        value: "init",
+        label: "--"
+    },
+    {
         value: "Salmon",
         label: "Grilled Salmon w/ capered cream sauce",
     },
@@ -52,7 +56,8 @@ const foods = [
 ]
   
 const classes = useStyles();
-const [food, setFood] = React.useState('Salmon')
+const [food, setFood] = React.useState('init')
+// eslint-disable-next-line 
 const [checked, setChecked] = React.useState('');
     
 const handleChangeFood = (event) => {

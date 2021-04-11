@@ -35,7 +35,7 @@ const Success = () => {
                         Where to now?
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        If you've responded in the affirmative, please consider booking a hotel in the area. Mike & Devan have provided hotel information below. We cannot wait to see you all, and we'll miss those of you who can't be with us!
+                        If you've responded in the affirmative, please consider booking a hotel in the area. Mike & Devan have provided hotel information below. <b>If you have additional guests to add, please ensure you go back and fill out RSVP cards for them as well!</b> We cannot wait to see you all, and we'll miss those of you who can't be with us!
                     </Typography>
                     </CardContent>
                 </CardActionArea>
