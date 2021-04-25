@@ -22,7 +22,26 @@ const useStyles = makeStyles({
     },
 });
 
-const Hotel = () => {
+const advancedTickets = (value) => {
+  if (value === 'views') {
+      return "Advanced purchase of tickets required"
+  }
+}
+
+// const headerType = (funType) => {
+//   if (funType === 'views') {
+//       return 'Panoramic City Views'
+//   } else if (funType === 'parks') {
+//       return 'City Parks'
+//   } else if (funType === 'sights') {
+//       return 'Outdoor Sights'
+//   } else {
+//       return 'Shopping'
+//   }
+// }
+
+const Hotel = (props) => {
+    const {toDo} = props
     const classes = useStyles();
   
     return (
@@ -86,6 +105,39 @@ const Hotel = () => {
                         </Button>
                     </CardActions>
                 </Card>
+            </div>
+            <h1 className="title">Welcome to New York, New York!</h1>
+            <div>
+            {toDo.map((toDo) => (
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <CardMedia
+                            className={classes.media}
+                            image={toDo.image}
+                            title={toDo.name}
+                        />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {toDo.name}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {toDo.description}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    <b>{advancedTickets(toDo.fun_type)}</b>
+                                </Typography>
+                            </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary" href={toDo.url} target="_blank">
+                        Visit
+                        </Button>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {toDo.address}
+                            </Typography>
+                    </CardActions>
+                </Card>
+            ))}
             </div>
             <div>
                 <br/>

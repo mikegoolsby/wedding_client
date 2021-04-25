@@ -31,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
 const ifAttending = (response) => {
   if (response === true) {
     return "Attending"
-  } else {
-    return "Not Attending"
+  } else if (response === false) {
+    return "Not yet indicated"
   }
 }
 
@@ -96,6 +96,11 @@ const Search = (props) => {
                     </CardActions>
                 </Card>
           ))}
+            </div>
+            <div>
+                <br/>
+                <br/>
+                <br/>
             </div>
     </Grid>
   )

@@ -18,6 +18,7 @@ function App() {
   // eslint-disable-next-line
   const [rsvpNode, setRsvpNode] = React.useState([])
   const [listHeadNode, setListHeadNode] = React.useState([])
+  const [funToDo, setFunToDo] = React.useState([])
 
   // eslint-disable-next-line
   const emptyNode = {
@@ -35,6 +36,15 @@ function App() {
   }
 
   React.useEffect(() => getListHead(), []);
+
+  const getFunThings = async () => {
+    const response = await fetch(url + '/thingstodo')
+    const data = await response.json()
+    setFunToDo(data)
+  }
+
+  React.useEffect(() => getFunThings(), [])
+
 
   const getNode = () => {
     fetch(url + "/rsvp")
@@ -85,7 +95,7 @@ function App() {
         <Route exact from="/aboutus" render={props => <About/>}/>
         <Route exact from="/bridalparty" render={props => <Bparty/>}/>
         <Route exact from="/rsvp" render={(rp) => <RSVP {...rp} init={emptyRsvp} handleSubmit={handleCreate}/>}/>
-        <Route exact from="/hotels" render={props => <Hotel {...props}/>}/>
+        <Route exact from="/hotels" render={(rp => <Hotel {...rp} toDo={funToDo}/>)}/>
         <Route exact from="/registry" render={props => <Registry {...props}/>}/>
         <Route exact from="/success" render={props => <Success {...props}/>}/>
         <Route exact from="/search" render={(rp => <Search {...rp} listHead={listHeadNode} handleUpdate={handleUpdate}/>)}/>

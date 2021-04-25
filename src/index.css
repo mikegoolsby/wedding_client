@@ -24,6 +24,10 @@ button {
   text-align: center;
 }
 
+.title-sub {
+  font-size: 15px;
+}
+
 #padme {
   margin-top: 20px;
 }
