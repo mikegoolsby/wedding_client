@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexWrap: 'wrap',
       width: '375px',
+      maxWidth: 345,
+      marginBottom: 8,
+      paddingBottom: 8
     },
     textField: {
         width: '375px'

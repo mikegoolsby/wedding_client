@@ -42,7 +42,7 @@ const Nav = () => {
       >
           <BottomNavigationAction className={classes.textStyle} label="Wedding" component={Link} to="/"icon={<WcIcon />} />
           <BottomNavigationAction className={classes.textStyle} label="About Us" component={Link} to="/aboutus" icon={<FavoriteIcon />} />
-          <BottomNavigationAction className={classes.textStyle} label="RSVP" component={Link} to="/rsvp" icon={<CheckBoxIcon />} />
+          <BottomNavigationAction className={classes.textStyle} label="RSVP" component={Link} to="/search" icon={<CheckBoxIcon />} />
           <BottomNavigationAction className={classes.textStyle} label="Stay in NYC" component={Link} to="/hotels" icon={<HotelIcon/>} />
           <BottomNavigationAction className={classes.textStyle} label="Registry" component={Link} to="/registry" icon={<RedeemIcon/>} />
       </BottomNavigation>

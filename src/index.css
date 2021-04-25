@@ -21,6 +21,7 @@ button {
 .title {
   font-family: 'Pinyon Script', cursive;
   font-size: 34px;
+  text-align: center;
 }
 
 #padme {

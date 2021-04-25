@@ -15,9 +15,11 @@ function App() {
 
   const url = "https://goolsby-wedding-api.herokuapp.com"
 
+  // eslint-disable-next-line
   const [rsvpNode, setRsvpNode] = React.useState([])
-  // const [selectedNode, setSelectedNode] = React.useState(emptyNode)
+  const [listHeadNode, setListHeadNode] = React.useState([])
 
+  // eslint-disable-next-line
   const emptyNode = {
     first_name: "",
     last_name: "",
@@ -26,14 +28,23 @@ function App() {
     song: ""
   }
 
+  const getListHead = async () => {
+    const response = await fetch(url + '/guestlist')
+    const data = await response.json()
+    setListHeadNode(data)
+  }
+
+  React.useEffect(() => getListHead(), []);
+
   const getNode = () => {
     fetch(url + "/rsvp")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
+      // console.log(data)
       setRsvpNode(data)
     })
   }
+
 
   React.useEffect(() => getNode(), []);
 
@@ -77,7 +88,7 @@ function App() {
         <Route exact from="/hotels" render={props => <Hotel {...props}/>}/>
         <Route exact from="/registry" render={props => <Registry {...props}/>}/>
         <Route exact from="/success" render={props => <Success {...props}/>}/>
-        <Route exact from="/search" render={(rp => <Search {...rp} rsvpNode={rsvpNode} handleUpdate={handleUpdate}/>)}/>
+        <Route exact from="/search" render={(rp => <Search {...rp} listHead={listHeadNode} handleUpdate={handleUpdate}/>)}/>
       </Switch>
       <Nav/>
     </BrowserRouter>
