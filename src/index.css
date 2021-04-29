@@ -22,6 +22,9 @@ button {
   font-family: 'Pinyon Script', cursive;
   font-size: 34px;
   text-align: center;
+  color: #7b1fa2;
+  -webkit-text-stroke: #b2820b;
+  -webkit-text-stroke-width: .33px;
 }
 
 .title-sub {
@@ -30,4 +33,12 @@ button {
 
 #padme {
   margin-top: 20px;
+}
+
+.splash {
+  height: 300px;
+  width: auto;
+  border-radius: 9px;
+  border-style: solid;
+  border-color: #b2820b;
 }
