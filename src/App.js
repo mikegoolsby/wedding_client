@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useReducer } from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 import Nav from '../src/components/bottomNav'
@@ -10,6 +10,7 @@ import Hotel from './pages/hotel';
 import Registry from './pages/registry';
 import Success from './pages/success';
 import Search from './pages/search';
+import DisplayRsvp from './pages/displayRSVP';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
     food: "",
     song: ""
   }
+
 
   const getListHead = async () => {
     const response = await fetch(url + '/guestlist')
@@ -98,7 +100,8 @@ function App() {
         <Route exact from="/hotels" render={(rp => <Hotel {...rp} toDo={funToDo}/>)}/>
         <Route exact from="/registry" render={props => <Registry {...props}/>}/>
         <Route exact from="/success" render={props => <Success {...props}/>}/>
-        <Route exact from="/search" render={(rp => <Search {...rp} listHead={listHeadNode} handleUpdate={handleUpdate}/>)}/>
+        <Route exact from="/search" render={(rp => <Search {...rp} listHead={listHeadNode} setNode={setListHeadNode} handleUpdate={handleUpdate}/>)}/>
+        <Route exact from="/display" render={(rp => <DisplayRsvp {...rp}/>)}/>
       </Switch>
       <Nav/>
     </BrowserRouter>
