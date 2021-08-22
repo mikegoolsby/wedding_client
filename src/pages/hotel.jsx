@@ -73,7 +73,7 @@ const Hotel = (props) => {
                         <Button size="small" color="primary" href="https://www.jameshotels.com/" target="_blank">
                         Visit
                         </Button>
-                        <Button size="small" color="primary" href="https://thejameshotelnomad.reztrip.com/classic/en/searches/602ea3227ba2a10225e4bb32/hotels/NYCJND/rooms?action=show&controller=landings#?category=" target="_blank">
+                        <Button size="small" color="primary" href="https://thejameshotelnomad.reztrip.com/classic/en/special_offer?action=show&controller=landings&locale=en&rate_code%5B%5D=FOGLEW&rate_code%5B%5D=FOGLEW&starting_page=special_offer" target="_blank">
                         Book
                         </Button>
                     </CardActions>
