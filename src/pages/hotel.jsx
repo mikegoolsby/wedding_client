@@ -65,7 +65,7 @@ const Hotel = (props) => {
                                     The James New York
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Experience sanctuary and scene at The James New York – NoMad, located on the corner of 29th Street and Madison Avenue, near iconic Madison Square Park and the Flatiron District.
+                                The bride and groom will be staying here. Experience sanctuary and scene at The James New York – NoMad, located on the corner of 29th Street and Madison Avenue, near iconic Madison Square Park and the Flatiron District.
                                 </Typography>
                             </CardContent>
                     </CardActionArea>

@@ -7,6 +7,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #eeeeee;
   width: auto;
+  padding: 5px;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.under-score {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 30px;
+  text-align: center;
+  color: #7b1fa2;
+  -webkit-text-stroke: #b2820b;
+  -webkit-text-stroke-width: .15px;
+}
+
+.bigger {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 60px;
+  margin-bottom: 0;
+  text-align: center;
+  color: #7b1fa2;
+  -webkit-text-stroke: #b2820b;
+  -webkit-text-stroke-width: .15px;
 }
 
 code {
@@ -24,7 +50,15 @@ button {
   text-align: center;
   color: #7b1fa2;
   -webkit-text-stroke: #b2820b;
-  -webkit-text-stroke-width: .33px;
+  -webkit-text-stroke-width: .15px;
+}
+
+.title-header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  color: black;
 }
 
 .title-sub {
@@ -41,4 +75,12 @@ button {
   border-radius: 9px;
   border-style: solid;
   border-color: #b2820b;
+}
+
+img {
+  border: #7b1fa2;
+  border-radius: 7px;
+  border-width: 3px;
+  border-style: solid;
+  margin: 16px;
 }

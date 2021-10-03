@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import {Grid, Button} from '@material-ui/core'
-import DisplayRsvp from './displayRSVP';
+import {Grid, Button, Typography} from '@material-ui/core'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
       width: '375px',
       maxWidth: 345,
       marginBottom: 11,
-      paddingBottom: 16
+      paddingBottom: 16,
+      textAlign: 'center',
     },
     button: {
         margin: theme.spacing(1),
@@ -21,10 +21,14 @@ const useStyles = makeStyles((theme) => ({
     media: {
       height: '200px',
     },
+    textal: {
+      padding: '4px',
+      textAlign: 'center'
+    }
 }));
 
 
-
+// eslint-disable-next-line
 const handleSubmit = (e) => {
   console.log(e)
 }
@@ -73,6 +77,7 @@ const Search = (props) => {
         <Grid item xs={6}>
             <TextField id="standard-basic" label="Last Name" name="last_name"/>
         </Grid>
+        <Typography className={classes.textal} variant="body2" component="p">We've disabled this part of our website for now. You'll be able to verify your attendance after invitations are sent out!</Typography>
         </form>
         <Button
           type="submit"
@@ -82,12 +87,10 @@ const Search = (props) => {
           endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
           onClick={callSearchFunction}
           value="SEARCH"
+          disabled
         >
             Search
         </Button>
-        <DisplayRsvp
-          setNode={setNode}
-        />
             <div>
                 <br/>
                 <br/>
