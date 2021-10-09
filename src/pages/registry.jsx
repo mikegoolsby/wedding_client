@@ -1,14 +1,20 @@
 import React from 'react'
-import { Button, Grid, Typography } from '@material-ui/core'
+import { Button, Grid, Typography, Card, CardActionArea, CardMedia, CardContent } from '@material-ui/core'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { makeStyles } from '@material-ui/core/styles';
-import Header from '../components/header';
+import wtc from '../images/1wtc.jpg'
 
 const useStyles = makeStyles({
     root: {
-        fontSize: '95%',
-        textAlign: 'center',
-        padding: '4px'
+        maxWidth: 345,
+        marginBottom: 8,
+        paddingBottom: 8
+    },
+    media: {
+        height: '420px',
+    },
+    textal: {
+        textAlign: 'center'
     }
 })
 
@@ -22,10 +28,22 @@ const Registry = () => {
         direction="column"
         justify="center"
         alignItems="center"
-        className={classes.root}
         >
             <h1 className="title">Registry Information</h1>
-            <Typography className={classes.root} variant="body2" component="p">We've consolidated our registries into one convenient place. You can find everything we've added at the button below! Thank you!</Typography>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={wtc}
+                        title="in a field in front of wtc"
+                    />
+                        <CardContent>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            We've consolidated our registries into one convenient place. You can find everything we've added at the button below! Thank you!
+                            </Typography>
+                        </CardContent>
+                </CardActionArea>
+            </Card>
             <Button
                 variant="contained"
                 color="primary"

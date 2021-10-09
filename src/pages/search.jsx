@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import {Grid, Button, Typography} from '@material-ui/core'
+import {Grid, Button, Typography, Card, CardActions, CardActionArea, CardMedia, CardContent} from '@material-ui/core'
+import bamf from '../images/bamf.jpg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
       width: '375px',
       maxWidth: 345,
       marginBottom: 11,
-      paddingBottom: 16,
+      paddingBottom: 0,
       textAlign: 'center',
     },
     button: {
         margin: theme.spacing(1),
     },
     media: {
-      height: '200px',
+      height: '400px',
     },
     textal: {
       padding: '4px',
@@ -60,6 +61,15 @@ const Search = (props) => {
     justify="center"
     alignItems="center">
       <h1 className="title">Confirm Your Reservation Below</h1>
+      <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={bamf}
+                        title="in a field"
+                    />
+                </CardActionArea>
+            </Card>
         <form className={classes.root}
           noValidate
           autoComplete="off"

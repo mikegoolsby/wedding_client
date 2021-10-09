@@ -21,7 +21,7 @@ const useStyles = makeStyles({
       paddingBottom: 8
     },
     media: {
-      height: '200px',
+      height: '420px',
     },
     textal: {
         textAlign: 'center',

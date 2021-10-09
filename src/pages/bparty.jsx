@@ -10,7 +10,7 @@ const Bparty = () => {
         justify="center"
         alignItems="center"
         >
-            <h2>Bridal Party</h2>
+            <h2 className="title">Bridal Party</h2>
             <h3>Announcements coming soon!</h3>
         </Grid>
     )

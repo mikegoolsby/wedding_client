@@ -20,6 +20,7 @@ function App() {
   const [rsvpNode, setRsvpNode] = React.useState([])
   const [listHeadNode, setListHeadNode] = React.useState([])
   const [funToDo, setFunToDo] = React.useState([])
+  const [photo, setPhoto] = React.useState([])
 
   // eslint-disable-next-line
   const emptyNode = {
@@ -46,6 +47,14 @@ function App() {
   }
 
   React.useEffect(() => getFunThings(), [])
+
+  const getPhotos = async () => {
+    const response = await fetch(url + '/photos')
+    const data = await response.json()
+    setPhoto(data)
+  }
+
+  React.useEffect(() => getPhotos(), [])
 
 
   const getNode = () => {
@@ -94,7 +103,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact from="/" render={props => <Wedding {...props}/>} />
-        <Route exact from="/aboutus" render={props => <About/>}/>
+        <Route exact from="/aboutus" render={(rp) => <About{...rp} photo={photo}/>}/>
         <Route exact from="/bridalparty" render={props => <Bparty/>}/>
         <Route exact from="/rsvp" render={(rp) => <RSVP {...rp} init={emptyRsvp} handleSubmit={handleCreate}/>}/>
         <Route exact from="/hotels" render={(rp => <Hotel {...rp} toDo={funToDo}/>)}/>
