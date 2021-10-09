@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core'
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 // import Header from '../components/header';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -10,6 +12,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import mlt from '../images/mlt.jpeg'
+import shed from '../images/shed.jpg'
 
 const useStyles = makeStyles({
     root: {
@@ -23,7 +26,8 @@ const useStyles = makeStyles({
     textal: {
         textAlign: 'center',
         marginBottom: '8px',
-        padding: '4px'
+        padding: '4px',
+        color: '#6d6d6d'
     }
 });
 
@@ -39,11 +43,20 @@ const Wedding = () => {
       >
           <h1 className="bigger">Devan & Mike</h1>
           <h2 className="under-score">September 17th, 2022</h2>
-          {/* <Header/> */}
-          <Typography className={classes.textal} variant="body2" component="p">We can't wait to celebrate our love with the people that mean the most to us! We (well, Mike) created this website to include all of the information you'll need about our big day.</Typography>
-          {/* <img className="splash" 
-          src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/136d0e9c-3497-402a-ad61-09e7b5c268a4/298ccaaf-a143-4775-b211-b2d4e4d1e363_rw_1920.jpg?h=2329d5c4d072941dc40b9f7b2572d89c"
-          alt="image of bride and groom and their dog"></img> */}
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={shed}
+                        title="in a field"
+                    />
+                        <CardContent>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            We can't wait to celebrate our love with the people that mean the most to us! We created this website (well, Devan directed and Mike programmed it) to include all of the information you'll need about our big day.
+                            </Typography>
+                        </CardContent>
+                </CardActionArea>
+            </Card>
           <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia

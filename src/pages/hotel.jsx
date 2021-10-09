@@ -100,7 +100,7 @@ const Hotel = (props) => {
                         <Button size="small" color="primary" href="https://www.cambrianycchelsea.com/" target="_blank">
                         Visit
                         </Button>
-                        <Button size="small" color="primary" href="https://www.choicehotels.com/new-york/new-york/cambria-hotels/ny537/rates?mc=frtmxxpx&_ga=2.164942527.1230052066.1613870418-1974673250.1613668243" target="_blank">
+                        <Button size="small" color="primary" href="https://www.choicehotels.com/reservations/groups/FJ36D5" target="_blank">
                         Book
                         </Button>
                     </CardActions>
