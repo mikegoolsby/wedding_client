@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Grid, Typography, Card, CardActionArea, CardMedia, CardContent } from '@material-ui/core'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { makeStyles } from '@material-ui/core/styles';
-import wtc from '../images/1wtc.jpg'
+import lift from '../images/lift.jpg'
 
 const useStyles = makeStyles({
     root: {
@@ -11,10 +11,13 @@ const useStyles = makeStyles({
         paddingBottom: 8
     },
     media: {
-        height: '420px',
+        height: 500,
     },
     textal: {
         textAlign: 'center'
+    },
+    button: {
+        marginBottom: 80,
     }
 })
 
@@ -34,7 +37,7 @@ const Registry = () => {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={wtc}
+                        image={lift}
                         title="in a field in front of wtc"
                     />
                         <CardContent>
@@ -50,6 +53,7 @@ const Registry = () => {
                 startIcon={<ExitToAppIcon/>}
                 href="https://registry.theknot.com/devan-fogle-michael-goolsby-september-2022-ny/44190308"
                 target="_blank"
+                className={classes.button}
             >
                 Browse our Registry
             </Button>

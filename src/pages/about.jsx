@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import field1 from '../images/field1.jpg'
 
 
 const useStyles = makeStyles({
@@ -28,6 +29,12 @@ const useStyles = makeStyles({
     },
     button: {
         paddingBottom: '20px'
+    },
+    first: {
+        height: '350px',
+        width: '100%',
+        display: 'block',
+        margin: 'auto'
     }
 });
 
@@ -45,12 +52,26 @@ const About = (props) => {
         >
             <h1 className="title">About Us</h1>
             <div>
-            <Button className={classes.button} size="medium" color="primary" disabled>
+            <Button className={classes.button} size="medium" color="primary" href="/bridesmaids" disabled>
                 Meet the Bridesmaids
             </Button>
-            <Button className={classes.button} size="medium" color="primary" disabled>
+            <Button className={classes.button} size="medium" color="primary" href="/groomsmen" disabled>
                 Meet the Groomsmen
             </Button>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.first}
+                        image={field1}
+                        title="In a field"
+                    />
+                        <CardContent>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            Here are some fun facts and photos from our lives together over the last few years. And while we can't wait to look forward to our future, we know how important it is to stop and look back and the memories we've had and the friends and family we've shared them with along the way.
+                            </Typography>
+                        </CardContent>
+                </CardActionArea>
+            </Card>
             {photo.map((photo) => (
                 <Card className={classes.root}>
                     <CardActionArea>

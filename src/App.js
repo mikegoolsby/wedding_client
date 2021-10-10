@@ -4,13 +4,14 @@ import './App.css';
 import Nav from '../src/components/bottomNav'
 import Wedding from '../src/pages/wedding'
 import About from './pages/about';
-import Bparty from './pages/bparty';
 import RSVP from './pages/rsvp';
 import Hotel from './pages/hotel';
 import Registry from './pages/registry';
 import Success from './pages/success';
 import Search from './pages/search';
 import DisplayRsvp from './pages/displayRSVP';
+import Bridesmaids from './pages/bridesmaids';
+import Groomsmen from './pages/groosmen';
 
 function App() {
 
@@ -104,7 +105,8 @@ function App() {
       <Switch>
         <Route exact from="/" render={props => <Wedding {...props}/>} />
         <Route exact from="/aboutus" render={(rp) => <About{...rp} photo={photo}/>}/>
-        <Route exact from="/bridalparty" render={props => <Bparty/>}/>
+        <Route exact from="/bridesmaids" render={props => <Bridesmaids/>}/>
+        <Route exact from="/groomsmen" render={props => <Groomsmen/>}/>
         <Route exact from="/rsvp" render={(rp) => <RSVP {...rp} init={emptyRsvp} handleSubmit={handleCreate}/>}/>
         <Route exact from="/hotels" render={(rp => <Hotel {...rp} toDo={funToDo}/>)}/>
         <Route exact from="/registry" render={props => <Registry {...props}/>}/>

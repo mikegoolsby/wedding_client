@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import {Grid, Button, Typography, Card, CardActions, CardActionArea, CardMedia, CardContent} from '@material-ui/core'
-import bamf from '../images/bamf.jpg'
+import wtc from '../images/1wtc.jpg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
     },
     media: {
-      height: '400px',
+      height: 420,
     },
     textal: {
       padding: '4px',
@@ -65,7 +65,7 @@ const Search = (props) => {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={bamf}
+                        image={wtc}
                         title="in a field"
                     />
                 </CardActionArea>
