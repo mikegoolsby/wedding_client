@@ -52,7 +52,7 @@ const Wedding = () => {
                     />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
-                            We can't wait to celebrate our love with the people that mean the most to us! We created this website (well, Devan directed and Mike programmed it) to include all of the information you'll need about our big day.
+                            We can't wait to celebrate our love with the people that mean the most to us! We created this website to include all of the information you'll need about our big day.
                             </Typography>
                         </CardContent>
                 </CardActionArea>
@@ -82,6 +82,20 @@ const Wedding = () => {
                     </Button>
                     <Button size="small" color="primary" href="https://www.google.com/maps/search/parking/@40.7451947,-73.9886242,17z" target="_blank">
                     Parking Near MLT
+                    </Button>
+                </CardActions>
+            </Card>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardContent>
+                        <Typography variant="h6" component="p">
+                            Per Mayoral Executive Order issued on August 25th, 2021, people 12 and older are required to show identification and proof they have received at least one dose of a COVID-19 vaccine to enter indoor dining and indoor entertainment spaces. As such, proof of vaccination will be required to attend our wedding.
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button size="small" color="primary" href="https://www1.nyc.gov/site/doh/covid/covid-19-vaccines-keytonyc.page" target="_blank">
+                        More Information
                     </Button>
                 </CardActions>
             </Card>
