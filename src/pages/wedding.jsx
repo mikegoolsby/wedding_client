@@ -1,7 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core'
+// eslint-disable-next-line 
 import Box from '@mui/material/Box';
+// eslint-disable-next-line 
 import Paper from '@mui/material/Paper';
 // import Header from '../components/header';
 import Card from '@material-ui/core/Card';
@@ -73,6 +75,17 @@ const Wedding = () => {
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                             Ceremony, cocktail hour, and reception.. It'll all happen here in the shadow of NYC's most iconic skycraper, the Empire State Building. The venue is located on the corner of East 29th Street and 5th Avenue in Midtown Manhattan.
+                            </Typography>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <Typography variant="h6" component="p">
+                                The wedding requires formal attire.
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            For women: A floor-length gown, a fancy cocktail dress, or a dressy pantsuit.
+                            <br/>
+                            For men: A formal dark suit and tie.
                             </Typography>
                         </CardContent>
                 </CardActionArea>

@@ -52,10 +52,10 @@ const About = (props) => {
         >
             <h1 className="title">About Us</h1>
             <div>
-            <Button className={classes.button} size="medium" color="primary" href="/bridesmaids" disabled>
+            <Button className={classes.button} size="medium" color="primary" href="/bridesmaids">
                 Meet the Bridesmaids
             </Button>
-            <Button className={classes.button} size="medium" color="primary" href="/groomsmen" disabled>
+            <Button className={classes.button} size="medium" color="primary" href="/groomsmen">
                 Meet the Groomsmen
             </Button>
             <Card className={classes.root}>

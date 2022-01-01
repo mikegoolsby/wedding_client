@@ -21,6 +21,11 @@ const useStyles = makeStyles({
     media: {
       height: '200px',
     },
+    button: {
+        paddingBottom: '20px',
+        display: 'flex',
+        justifyContent: 'center',
+    },
 });
 
 const Groomsmen = () => {
@@ -36,6 +41,9 @@ const Groomsmen = () => {
         >
             <h2 className="title">The Groomsmen</h2>
             <div>
+                <Button className={classes.button} size="medium" color="primary" href="/aboutus">
+                    Back to "About Us"
+                </Button>
                 <Card className={classes.root}>
                     <CardActionArea>
                         <CardMedia
