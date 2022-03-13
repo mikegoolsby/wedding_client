@@ -102,7 +102,7 @@ const Wedding = () => {
                 <CardActionArea>
                     <CardContent>
                         <Typography variant="h6" component="p">
-                            New York City has removed its vaccine mandate for indoor events. We will welcome all guests regardless of vaccination status and will adhere to local guidelines as they change.
+                            Update as of March 2022: New York City has removed its vaccine mandate for indoor events. We will welcome all guests regardless of vaccination status and will adhere to local guidelines as they change.
                         </Typography>
                     </CardContent>
                 </CardActionArea>
