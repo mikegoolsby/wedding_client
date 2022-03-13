@@ -102,7 +102,7 @@ const Wedding = () => {
                 <CardActionArea>
                     <CardContent>
                         <Typography variant="h6" component="p">
-                            Per Mayoral Executive Order issued on August 25th, 2021, people 12 and older are required to show identification and proof they have received at least one dose of a COVID-19 vaccine to enter indoor dining and indoor entertainment spaces. As such, proof of vaccination will be required to attend our wedding.
+                            New York City has removed its vaccine mandate for indoor events. We will welcome all guests regardless of vaccination status and will adhere to local guidelines as they change.
                         </Typography>
                     </CardContent>
                 </CardActionArea>
