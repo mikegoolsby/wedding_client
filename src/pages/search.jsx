@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import {Grid, Button, Typography, Card, CardActions, CardActionArea, CardMedia, CardContent} from '@material-ui/core'
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+import {Grid, Button, Typography, Card, CardActionArea, CardMedia} from '@material-ui/core'
 import wtc from '../images/1wtc.jpg'
 
 
@@ -37,17 +34,6 @@ const handleSubmit = (e) => {
 }
 
 const Search = (props) => {
-  const {setNode} = props
-
-  const [searchValue, setSearchValue] = useState("")
-
-  const handleSearchInputChanges = (e) => {
-    setSearchValue(e.target.value);
-  }
-
-  const resetInputField = () => {
-    setSearchValue("");
-  }
 
 
     const classes = useStyles();
