@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import {Grid, Button, Typography, Card, CardActions, CardActionArea, CardMedia, CardContent} from '@material-ui/core'
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 import wtc from '../images/1wtc.jpg'
 
 
@@ -47,11 +49,6 @@ const Search = (props) => {
     setSearchValue("");
   }
 
-  const callSearchFunction = (e) => {
-    e.preventDefault();
-    setNode(searchValue);
-    resetInputField();
-  }
 
     const classes = useStyles();
   return (
@@ -74,33 +71,40 @@ const Search = (props) => {
           noValidate
           autoComplete="off"
           color="primary"
+          action='https://www.theknot.com/goolsby'
+          method="get"
+          target="_blank"
         >
         <Grid item xs={6}>
-            <TextField
+            {/* <TextField
               id="standard-basic"
               label="First Name"
               name="first_name"
               value={searchValue}
               onChange={handleSearchInputChanges}
-            />
+            /> */}
         </Grid>
-        <Grid item xs={6}>
-            <TextField id="standard-basic" label="Last Name" name="last_name"/>
-        </Grid>
-        <Typography className={classes.textal} variant="body2" component="p">We've disabled this part of our website for now. You'll be able to verify your attendance after invitations are sent out!</Typography>
-        </form>
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
-          onClick={callSearchFunction}
-          value="SEARCH"
-          disabled
+        
+        <Typography className={classes.textal} variant="body2" component="p">Please click below to begin the RSVP process. Note, this will take you to another site. We can't wait to see you all!</Typography>
+        <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
         >
-            Search
-        </Button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            endIcon={<CheckCircleIcon>RSVP</CheckCircleIcon>}
+            // eslint-disable-next-line no-restricted-globals
+            value="RSVP"
+            >
+              RSVP
+          </Button>
+        </Grid>
+        </form>
             <div>
                 <br/>
                 <br/>
